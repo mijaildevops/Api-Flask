@@ -20,36 +20,40 @@ mysql = MySQL(app)
 # ////////////////////////////////////////////////////////////// 
 
 # //////////////////////////////////
-@app.route ('/data')
-def getdata():
-    #return 'Hello word'
-    
-    cur = mysql.connection.cursor()
-    cur.execute('SELECT name, Continent, Region, HeadOfState FROM country')
-    # la variable data es una lista, cada registro encontrado en la DB es una elemento de la lista 
-    # un elemento de la lista puede tener N numero de propiedades (Columnas SELECT)
-    data = cur.fetchall()
-    print (json.dumps(data))
+@app.route ('/pais')
+def GetDataPais():
+    return 'Ruta Pais'
 
+# //////////////////////////////////
+@app.route ('/liga')
+def GetDataLiga():
+    return 'Ruta Liga'    
 
-    return jsonify(
-        # //////////////////////////////////////////////////////////////
-        # un objeto json esta represantado entre llaves, todo lo que esta dentro de las llaves son propiedades del objeto 1
-        # //////////////////////////////////////////////////////////////
+# //////////////////////////////////
+@app.route ('/temporada')
+def GetDataTemporada():
+    return 'Ruta Temporada'    
 
-        # //////////////////////////////////////////////////////////////
-        # De esta forma se imprimer el primer Elemento o registro de la Lista con todas sus propiedades
-        {"Paises": data[0], "message": "Forma de imprimir el primer Elemento o registro de la Lista con todas sus propiedades"},
+# //////////////////////////////////
+@app.route ('/categoria')
+def GetDataCategoria():
+    return 'Ruta categoria' 
 
-        # //////////////////////////////////////////////////////////////
-        # De esta forma se imprimer el primer Elemento o registro de la Lista, seleccionado solo una Propieded
-        {"Pais": data[0][0], "message": "Forma de imprimir el primer Elemento o registro de la Lista, seleccionado solo una Propiedad"},
-        
-        # //////////////////////////////////////////////////////////////
-        # De esta forma se Imprimen todos los registros
-        {"Data": data, "message": "Forma de Imprimin todos los registros o Elementos"}
-        )
-    
+# //////////////////////////////////
+@app.route ('/noticias')
+def GetDataNoticia():
+    return 'Ruta notias' 
+
+# //////////////////////////////////
+@app.route ('/torneo')
+def GetDataTorneo():
+    return 'Ruta torneo' 
+
+# //////////////////////////////////
+@app.route ('/titulo')
+def GetDataTitulo():
+    return 'Ruta Titulo' 
+
 # //////////////////////////////////////////////////////////////
 # Setting Main Funtions
 # configuracion de ambiente para hacer Deploy
