@@ -32,6 +32,9 @@ def getdata():
     #print (json.dumps(data))
 
     return jsonify(
+        # esto es un arrecglo de Ob
+        # un objeto json esta represantado entre llaves, todo lo que esta dentro de las llaves son propiedades del objeto 1
+        # para selecionar 
         {"Data": data[0][1], "message": "Lista de db"},
         {"Data": data[1], "message": "Lista de db"},
         {"Data": data[2], "message": "Lista de db"},
