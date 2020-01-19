@@ -6,5 +6,7 @@ app = Flask(__name__)
 def Index():
     return 'Hello word'
 
+
 if __name__ == '__main__':
-    app.run(port = 4321, debug = True, host='192.168.100.233')
+    # app.run(port = 4321, debug = True, host='192.168.100.233') # PC Main
+    app.run(port = 4321, debug = True, host='192.168.100.156') # Laptop
